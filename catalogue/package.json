@@ -1,0 +1,22 @@
+{
+  "name": "catalogue",
+  "version": "1.0.0",
+  "description": "3D Prints catalogue REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "mongodb": "^4.1.0",
+    "pino": "^5.10.8",
+    "express-pino-logger": "^4.0.0",
+    "pino-pretty": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
