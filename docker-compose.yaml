@@ -3,13 +3,13 @@ services:
     build: 
      context: ./catalogue
      dockerfile: Dockerfile
-    image: peruripramod/catalogue:v1
+    image: peruripramod/catalogue:v2
     container_name: catalogue
     depends_on:
     - mongodb
   mongodb:
     build: ./mongodb
-    image: peruripramod/mongodb:v1
+    image: peruripramod/mongodb:v2
     container_name: mongodb
     volumes:
     - mongodb:/data/db
@@ -21,7 +21,7 @@ services:
     - redis:/data
   mysql:
     build: ./mysql
-    image: peruripramod/mysql:v1
+    image: peruripramod/mysql:v2
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
@@ -35,28 +35,28 @@ services:
       RABBITMQ_DEFAULT_PASS: roboshop123
   user:
     build: ./user
-    image: peruripramod/user:v1
+    image: peruripramod/user:v2
     container_name: user
     depends_on:
     - mongodb
     - redis
   cart:
     build: ./cart
-    image: peruripramod/cart:v1
+    image: peruripramod/cart:v2
     container_name: cart
     depends_on:
     - redis
     - catalogue
   shipping:
     build: ./shipping
-    image: peruripramod/shipping:v1
+    image: peruripramod/shipping:v2
     container_name: shipping
     depends_on:
     - mysql
     - cart
   payment:
     build: ./payment
-    image: peruripramod/payment:v1
+    image: peruripramod/payment:v2
     container_name: payment
     depends_on:
     - rabbitmq
@@ -64,7 +64,7 @@ services:
     - user
   frontend:
     build: ./frontend
-    image: peruripramod/frontend:v1
+    image: peruripramod/frontend:v2
     container_name: frontend
     ports:
     - "80:80"
